@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eid ul Adha Mubarak ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.75)),
+  url('https://images.unsplash.com/photo-1602250518541-5c2c0a0b4f8b?q=80&w=2070&auto=format&fit=crop');
+
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+
+/* URDU TITLE */
+
+.urdu-title{
+  position:absolute;
+  top:30px;
+  width:100%;
+  text-align:center;
+
+  color:#ffd369;
+  font-size:42px;
+  font-family:'Noto Nastaliq Urdu', serif;
+
+  text-shadow:0 5px 20px rgba(0,0,0,0.8);
+}
+
+/* BUTTON */
+
+#openBtn{
+  padding:18px 50px;
+  border:none;
+  border-radius:60px;
+
+  background:white;
+  color:#c1121f;
+
+  font-size:22px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+  box-shadow:0 10px 30px rgba(255,255,255,0.25);
+}
+
+#openBtn:hover{
+  transform:scale(1.05);
+}
+
+/* ENVELOPE */
+
+#envelope{
+  width:360px;
+  height:230px;
+
+  position:relative;
+
+  margin-top:40px;
+
+  display:none;
+
+  overflow:hidden;
+}
+
+/* ENVELOPE BODY */
+
+.envelope-body{
+  position:absolute;
+
+  width:100%;
+  height:100%;
+
+  background:#c1121f;
+
+  border-radius:0 0 20px 20px;
+
+  z-index:2;
+}
+
+/* ENVELOPE TOP */
+
+.envelope-top{
+  position:absolute;
+
+  top:-115px;
+  left:0;
+
+  border-left:180px solid transparent;
+  border-right:180px solid transparent;
+  border-bottom:115px solid white;
+
+  transform-origin:bottom;
+
+  transition:1s ease;
+
+  z-index:5;
+}
+
+/* CARD */
+
+.card{
+  position:absolute;
+
+  width:310px;
+  min-height:360px;
+
+  background:white;
+
+  left:25px;
+
+  /* 👇 PEHLE COMPLETELY HIDE */
+  bottom:-320px;
+
+  border-radius:20px;
+
+  padding:35px 25px;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+
+  transition:1.5s ease;
+
+  z-index:1;
+}
+
+.card h1{
+  color:#c1121f;
+  font-size:30px;
+  margin-bottom:20px;
+}
+
+.card p{
+  color:#333;
+  line-height:2;
+  font-size:18px;
+}
+
+.name{
+  margin-top:25px;
+  color:#777;
+}
+
+.name strong{
+  color:#c1121f;
+}
+
+/* OPEN ANIMATION */
+
+#envelope.open .envelope-top{
+  transform:rotateX(180deg);
+}
+
+#envelope.open .card{
+  bottom:20px;
+}
+
+/* FINAL CARD */
+
+#finalCard{
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-50%) scale(0.7);
+
+  width:340px;
+  min-height:420px;
+
+  background:rgba(255,255,255,0.12);
+
+  backdrop-filter:blur(15px);
+
+  border:1px solid rgba(255,255,255,0.18);
+
+  border-radius:25px;
+
+  padding:40px 30px;
+
+  text-align:center;
+
+  color:white;
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:1.2s ease;
+}
+
+#finalCard.show{
+  opacity:1;
+  visibility:visible;
+
+  transform:translate(-50%,-50%) scale(1);
+}
+
+#finalCard h2{
+  color:#ffd369;
+  font-size:34px;
+  margin-bottom:20px;
+}
+
+#finalCard p{
+  line-height:2;
+  font-size:18px;
+}
+
+.final-name{
+  margin-top:25px;
+  color:#ffd369;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .urdu-title{
+    font-size:30px;
+    top:20px;
+  }
+
+  #envelope{
+    width:300px;
+    height:200px;
+  }
+
+  .envelope-top{
+    border-left:150px solid transparent;
+    border-right:150px solid transparent;
+    border-bottom:100px solid white;
+
+    top:-100px;
+  }
+
+  .card{
+    width:255px;
+    left:22px;
+    min-height:320px;
+
+    bottom:-290px;
+  }
+
+  #envelope.open .card{
+    bottom:10px;
+  }
+
+  .card p{
+    font-size:16px;
+  }
+
+  #finalCard{
+    width:300px;
+    min-height:390px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="urdu-title">
+  عید الاضحیٰ مبارک
+</div>
+
+<button id="openBtn">
+  ✨ Click Me ✨
+</button>
+
+<div id="envelope">
+
+  <div class="envelope-top"></div>
+
+  <div class="envelope-body"></div>
+
+  <div class="card">
+
+    <h1>Eid Mubarak ❤️</h1>
+
+    <p>
+      Eid ul Adha Mubarak<br>
+      Mere Pyare Abu Jan ❤️<br><br>
+
+      Allah Aap Ka Saya
+      Hamesha Hamare Saron Par Rakhe 🤲
+    </p>
+
+    <div class="name">
+      From <strong>Muhazim</strong> ❤️
+    </div>
+
+  </div>
+
+</div>
+
+<div id="finalCard">
+
+  <h2>🌹 Eid Mubarak 🌹</h2>
+
+  <p>
+    Eid ul Adha Mubarak<br>
+    Mere Pyare Abu Jan ❤️<br><br>
+
+    Allah Aap Ka Saya
+    Hamesha Hamare Saron Par Rakhe 🤲
+  </p>
+
+  <div class="final-name">
+    — From Muhazim ❤️
+  </div>
+
+</div>
+
+<script>
+
+document.getElementById("openBtn").onclick = function(){
+
+  const btn = document.getElementById("openBtn");
+  const envelope = document.getElementById("envelope");
+  const finalCard = document.getElementById("finalCard");
+
+  btn.style.display = "none";
+
+  envelope.style.display = "block";
+
+  setTimeout(() => {
+    envelope.classList.add("open");
+  }, 500);
+
+  setTimeout(() => {
+    envelope.style.display = "none";
+    finalCard.classList.add("show");
+  }, 3500);
+
+};
+
+</script>
+
+</body>
+</html>
